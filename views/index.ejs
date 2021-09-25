@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unit 2 Assesment</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+
+
+ <form action="/" method="POST">
+<label for="input"></label>
+  <input name ='input' type="text" required>
+  <button>ADD TO DO</button>
+ </form>
+
+
+ <h1>To Do List</h1>
+
+ <% if (todo.length) {%> 
+    <hr>
+    <ul>
+
+ <% todo.forEach((element, id) => { %>
+  <li>
+  <%= element.todo  %> 
+  <%= element.done ? ':Completed' : ': get on it slacker'  %>  
+  <form action='/delete<%=id%>' method="POST">
+    <button type="submit">DELETE</button>
+  </form>
+ <% }) %> 
+</li>
+</ul>
+
+ <% } else {  %> 
+  <h3>Nothing added to the list!</h3>
+  <% } %> 
+ <hr>
+  </body>
+</html>
